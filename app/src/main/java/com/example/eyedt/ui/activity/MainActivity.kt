@@ -1,15 +1,13 @@
-package com.example.eyedt
+package com.example.eyedt.ui.activity
 
-import android.content.Intent
-import android.graphics.Color
-import android.graphics.ColorFilter
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.example.eyedt.R
+import com.example.eyedt.ui.fragment.Eye_Fragment
+import com.example.eyedt.ui.fragment.Recovery_Fragment
+import com.example.eyedt.ui.fragment.We_Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener{
