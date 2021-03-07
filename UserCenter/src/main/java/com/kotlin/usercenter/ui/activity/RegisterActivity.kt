@@ -1,8 +1,9 @@
-package com.example.eyedt.ui.activity
+package com.kotlin.usercenter.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.eyedt.R
+import com.kotlin.usercenter.R
+
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

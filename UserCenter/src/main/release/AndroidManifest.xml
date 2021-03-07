@@ -8,14 +8,8 @@
         android:label="EYEDT"
         android:theme="@style/Theme.AppCompat"
         >
-
-        <activity android:name="com.kotlin.usercenter.ui.activity.RegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.kotlin.usercenter.com.kotlin.user.ui.activity.RegisterActivity"/>
     </application>
+
 
 </manifest>
