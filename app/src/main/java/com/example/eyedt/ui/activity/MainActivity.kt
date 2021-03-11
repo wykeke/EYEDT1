@@ -9,7 +9,7 @@ import com.example.eyedt.ui.fragment.Eye_Fragment
 import com.example.eyedt.ui.fragment.Recovery_Fragment
 import com.example.eyedt.ui.fragment.We_Fragment
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.toast
+//import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener{
 
