@@ -1,7 +1,11 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
+if(isUserModule.toBoolean()) {
+    apply plugin : 'com.android.library'
+}else{
+    apply plugin : 'com.android.application'
 }
+apply plugin : 'kotlin-android'
+apply plugin : 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 30
@@ -21,6 +25,21 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main{
+            if(isUserModule.toBoolean()){
+                //作为库工程启动
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                //release模式下排除debug文件夹中的所有Java文件
+                java {
+                    exclude 'debug/**'
+                }
+            }else {
+                //作为应用程序启动
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            }
         }
     }
     compileOptions {

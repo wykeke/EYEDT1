@@ -30,6 +30,7 @@
             android:hint="   password"/>
 
         <Button
+            android:id="@+id/Login"
             android:layout_width="300dp"
             android:layout_height="42dp"
             android:layout_marginTop="20dp"
@@ -37,6 +38,7 @@
             android:text="Login"/>
 
         <Button
+            android:id="@+id/SingIn"
             android:layout_width="300dp"
             android:layout_height="42dp"
             android:layout_marginTop="20dp"
