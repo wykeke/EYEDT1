@@ -47,7 +47,7 @@ class Eye_Fragment : Fragment() {
         titles.add("视力恢复")
 
         //将数据展示在页面上
-        //tabLayout!!.setupWithViewPager(viewPager)
+        tabLayout!!.setupWithViewPager(viewPager)
         pageAdapter = PageAdapter(
             fragmentManager,
             fragmentList,

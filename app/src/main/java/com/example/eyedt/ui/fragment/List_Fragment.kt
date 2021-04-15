@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eyedt.R
 import com.example.eyedt.ui.adapter.Bean_mainList
 import com.example.eyedt.ui.adapter.List_Adapter
+import kotlinx.android.synthetic.main.list_fragment.*
+import org.jetbrains.anko.support.v4.runOnUiThread
+import kotlin.concurrent.thread
 
 class List_Fragment : Fragment() {
 
@@ -28,12 +32,8 @@ class List_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val item = Bean_mainList(
-            "aaaaa",
-            "http://photocq.photo.store.qq.com/psc?/V11qzdNF0Ok9NO/8x9yFjEE1.JqOZi1gudBZ3PAkxxyJeJOZiA1WJ9wP.iRGYy9Ygv7MVDANOA0Gm8kT19mPBUtMUf7185vKTw.RZCt.hgr0oHSLr0SSZDH1GU!/b&bo=wAOHA8ADhwMRGS4!&rf=viewer_4"
-        )
-        list.add(item)
-        list.add(item)
+
+        initList()
 
         val layoutManager = GridLayoutManager(context,2)  //设置排布方式
         recyclerView.layoutManager = layoutManager
@@ -42,5 +42,37 @@ class List_Fragment : Fragment() {
             list
         )//适配器
 
+        swipeRefresh.setOnRefreshListener {
+            Toast.makeText(context,"刷新",Toast.LENGTH_SHORT).show()
+            refresh(recyclerView.adapter as List_Adapter)
+        }
+    }
+
+    private fun initList(){
+        val item1 = Bean_mainList(
+            "AAAAA",
+            "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2676935521,922112450&fm=11&gp=0.jpg"
+        )
+        list.add(item1)
+        list.add(item1)
+
+        val item2 = Bean_mainList(
+            "BBBBB",
+            "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3824886304,665215047&fm=26&gp=0.jpg"
+        )
+        list.add(item2)
+        list.add(item2)
+
+    }
+
+    //刷新
+    private fun refresh(adapter: List_Adapter) {
+        thread {
+            Thread.sleep(2000)
+            runOnUiThread {
+                initList()
+                adapter.notifyDataSetChanged()
+                swipeRefresh.isRefreshing = false
+            } }
     }
 }
