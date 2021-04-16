@@ -48,11 +48,14 @@ class Eye_Fragment : Fragment() {
 
         //将数据展示在页面上
         tabLayout!!.setupWithViewPager(viewPager)
-        pageAdapter = PageAdapter(
-            fragmentManager,
-            fragmentList,
-            titles
-        )
+//        pageAdapter = PageAdapter(
+//            fragmentManager,
+//            fragmentList,
+//            titles
+//        )
+        pageAdapter =  PageAdapter(childFragmentManager,fragmentList,titles)
+        //当把fragmentManager改为childFragmentManager时，切换fragment可以保留初始化页面时的样子，
+        //但不会保留刷新情况
         viewPager!!.adapter = pageAdapter
         //viewPager!!.offscreenPageLimit = 2 //设置预加载页面当fragment切换时数据不会消失，但是应用会闪退
     }

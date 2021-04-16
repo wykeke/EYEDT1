@@ -28,4 +28,6 @@ class List_Adapter(layoutResId: Int, data: List<Bean_mainList?>?) :
 
      }
 
+
+
 }
