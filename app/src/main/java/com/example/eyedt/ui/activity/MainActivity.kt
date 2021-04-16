@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.eyedt.R
 import com.example.eyedt.ui.fragment.Eye_Fragment
+import com.example.eyedt.ui.fragment.List_Fragment
 import com.example.eyedt.ui.fragment.Recovery_Fragment
 import com.example.eyedt.ui.fragment.We_Fragment
 import kotlinx.android.synthetic.main.activity_main.*

@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
 
     //BRVAH 强大的recyclerView框架
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
     //glide图片加载框架
     //api 'com.github.bumptech.glide:glide:3.7.0'
