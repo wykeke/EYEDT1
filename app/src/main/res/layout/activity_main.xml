@@ -7,36 +7,10 @@
     tools:context=".ui.activity.MainActivity"
     >
 
-    <LinearLayout
-        android:id="@+id/l"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        >
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/tx"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:src="@drawable/tx"/>
-
-        <androidx.appcompat.widget.SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape"
-            android:layout_margin="8dp"
-
-            >
-
-        </androidx.appcompat.widget.SearchView>
-
-    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment"
-        android:layout_below="@id/l"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
