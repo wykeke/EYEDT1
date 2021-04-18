@@ -147,7 +147,7 @@ class List_Fragment : Fragment() {
                 //lastVisibleItem >= totalItemCount - 5 表示剩下5个item实现预加载
                 // dy>0 表示向下滑动,滑动距离
                 if (totalItemCount >= 8 && lastVisibleItem >= totalItemCount - 2 && dy > 0) {
-                    Toast.makeText(context,"上滑刷新",Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context,"上滑刷新",Toast.LENGTH_SHORT).show()
                     refresh(recyclerView.adapter as List_Adapter)
                 }
             }

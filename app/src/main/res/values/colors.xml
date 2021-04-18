@@ -6,4 +6,7 @@
     <color name="backcolor">#181D30</color>
     <color name="textcolor">#F5F6F8</color>
 
+    <color name="transparent">#00000000</color> <!-- 透明 -->
+    <color name="translucent">#e0000000</color> <!-- 半透明 -->
+
 </resources>
