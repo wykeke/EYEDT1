@@ -22,8 +22,10 @@ import kotlin.concurrent.thread
 class List_Fragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
+//    private lateinit var card_recyclerView: RecyclerView
     private lateinit var gridView: GridView
     private var adapter: List_Adapter? = null
+//    private var card_adapter: List_Adapter? = null
 
     var list = ArrayList<Bean_mainList>()  //存放展示的图片和文字列表
 
@@ -38,6 +40,7 @@ class List_Fragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.list_fragment, container, false)
         recyclerView = view.findViewById(R.id.recyclerview)
+//        card_recyclerView = view.findViewById(R.id.card_recyclerview)
 //        gridView = view.findViewById(R.id.grid)
 
         return view
@@ -54,6 +57,16 @@ class List_Fragment : Fragment() {
             list
         )//适配器
         recyclerView.adapter = adapter
+
+        //卡片式布局适配器
+//        val card_layoutManager = LinearLayoutManager(context)  //设置排布方式
+//        card_layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+//        card_recyclerView.layoutManager = card_layoutManager
+//        card_adapter = List_Adapter(
+//            R.layout.card_view,
+//            list
+//        )//适配器
+//        card_recyclerView.adapter = card_adapter
 
         //添加头部
         val headerView = LayoutInflater.from(context).inflate(R.layout.list_header,null)
@@ -146,7 +159,7 @@ class List_Fragment : Fragment() {
                 val totalItemCount: Int = layoutManager.itemCount //总条目
                 //lastVisibleItem >= totalItemCount - 5 表示剩下5个item实现预加载
                 // dy>0 表示向下滑动,滑动距离
-                if (totalItemCount >= 8 && lastVisibleItem >= totalItemCount - 2 && dy > 0) {
+                if (totalItemCount >= 2 && lastVisibleItem >= totalItemCount - 2 && dy > 0) {
 //                    Toast.makeText(context,"上滑刷新",Toast.LENGTH_SHORT).show()
                     refresh(recyclerView.adapter as List_Adapter)
                 }
